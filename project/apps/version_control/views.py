@@ -26,6 +26,12 @@ class TagsViewSet(viewsets.ModelViewSet):
     queryset = models.Tag.objects.all()
     serializer_class = serializers.TagsSerializer
 
+    def get_serializer_class(self):
+        if self.detail:
+            return serializers.TagsSerializer
+        else:
+            return serializers.TagsAddSerializer
+
 
 class EnvironmentsViewSet(viewsets.ModelViewSet):
     queryset = models.Environment.objects.all()

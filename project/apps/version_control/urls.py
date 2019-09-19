@@ -11,5 +11,5 @@ router.register(r'environments', views.EnvironmentsViewSet, base_name="environme
 router.register(r'tags', views.TagsViewSet, base_name="tags")
 
 urlpatterns = [
-    url(r'^', include(router.urls))
+    url(r'^', include((router.urls, 'version_control'), namespace='version_control'))
 ]

@@ -10,3 +10,10 @@ class TagsSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'name', 'repositorie'
         )
+
+class TagsAddSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Tag
+        fields = (
+            'id', 'name', 'repositorie'
+        )

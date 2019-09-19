@@ -20,6 +20,7 @@ class EnvironmentDetailSerializer(serializers.ModelSerializer):
 
 
 class EnvironmentSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='version_control:environments-detail', format='html', lookup_field='pk')
     tags_id = serializers.PrimaryKeyRelatedField(
         write_only=True, 
         queryset=models.Tag.objects.all(),
@@ -31,5 +32,5 @@ class EnvironmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Environment
         fields = (
-            'id', 'name', 'client', 'tags_id', 'tags'
+            'id', 'url', 'name', 'client', 'tags_id', 'tags'
         )

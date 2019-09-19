@@ -8,7 +8,8 @@ from .repositorie import (
 )
 
 from .tag import (
-    TagsSerializer
+    TagsSerializer,
+    TagsAddSerializer
 )
 
 from .environment import (
